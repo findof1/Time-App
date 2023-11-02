@@ -3,23 +3,58 @@ body{
   color: white;
   font-family: Arial;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction:column;
+  min-height: 95vh;
+  min-width: 95vw;
 }
 
 .container {
-  width: 75%;
-  height: 75%;
+  
   display: flex;
   border: white 1px solid;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10%;
+  transition: all 200ms ease;
+  min-height: 50vh;
+  min-width: 50vw;
 }
 
 .inside {
-  margin: 100px;
-  margin-top: 140px;
-  margin-bottom: 140px;
   color: white;
   font-size: x-large;
+  transition: color 200ms ease;
+}
+
+.displayTime, .displayDate {
+  transition: all 1000ms ease;
+  
+}
+
+.container:not(:hover) .displayTime, .container:not(:hover) .displayDate {
+  transition: all 500ms ease;
+  
+}
+
+.container:not(:hover) .inside {
+  color: transparent;
+  background-color: transparent;
+
+}
+
+.container:hover {
+  transform: scale(1.4, 1.4);
+  border-width: 3px;
+}
+
+.container:hover .displayTime {
+  transform:translateY(-120%) translateX(-120%)  rotate(-25deg);
+}
+
+.container:hover .displayDate {
+  transform:translateY(-350%) translateX(120%)  rotate(25deg);
 }
